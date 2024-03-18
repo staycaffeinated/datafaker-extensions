@@ -1,22 +1,21 @@
 package mmm.coffee.fakes;
 
+import static mmm.coffee.fakes.Constants.DATA_FOLDER;
+
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
 import lombok.EqualsAndHashCode;
 import lombok.extern.slf4j.Slf4j;
 import mmm.coffee.fakes.domain.Metropolis;
 import mmm.coffee.fakes.domain.MetropolisRoot;
 import net.datafaker.providers.base.AbstractProvider;
 import net.datafaker.providers.base.BaseProviders;
-
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-
-import static mmm.coffee.fakes.Constants.DATA_FOLDER;
 
 @EqualsAndHashCode(callSuper = true)
 @Slf4j

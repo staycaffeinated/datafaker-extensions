@@ -1,8 +1,8 @@
 package mmm.coffee.fakes;
 
-import org.junit.jupiter.api.Test;
-
 import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.jupiter.api.Test;
 
 /**
  * Unit test
@@ -14,10 +14,5 @@ class FirstNameFakerTest {
     @Test
     void shouldReturnFirstName() {
         assertThat(sut.firstNames().nextName()).isNotNull();
-
-        for (int i = 0; i < 10; i++) {
-            System.out.println(sut.firstNames().nextName());
-        }
     }
-
 }

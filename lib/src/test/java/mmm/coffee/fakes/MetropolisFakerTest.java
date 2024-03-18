@@ -1,9 +1,8 @@
 package mmm.coffee.fakes;
 
-import mmm.coffee.fakes.domain.Metropolis;
-import org.junit.jupiter.api.Test;
-
 import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.jupiter.api.Test;
 
 /**
  * Unit test
@@ -15,11 +14,5 @@ class MetropolisFakerTest {
     @Test
     void shouldReturnMetropolis() {
         assertThat(sut.metropolis().next()).isNotNull();
-
-        for (int i = 0; i < 10; i++) {
-            Metropolis metro = sut.metropolis().next();
-            System.out.println(metro);
-        }
     }
-
 }

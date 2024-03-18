@@ -1,8 +1,8 @@
 package mmm.coffee.fakes;
 
-import org.junit.jupiter.api.Test;
-
 import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.jupiter.api.Test;
 
 /**
  * Unit test
@@ -20,13 +20,11 @@ class PersonalDataFakerTest {
     @Test
     void shouldAcquireEmailAddress() {
         String fname = sut.personNames().firstName();
-        String surname =  sut.personNames().lastName();
-        String email = sut.personNames().emailAddress(fname,surname);
+        String surname = sut.personNames().lastName();
+        String email = sut.personNames().emailAddress(fname, surname);
 
         assertThat(fname).isNotNull().isNotEmpty();
         assertThat(surname).isNotNull().isNotEmpty();
         assertThat(email).isNotNull().isNotEmpty();
-
     }
-
 }

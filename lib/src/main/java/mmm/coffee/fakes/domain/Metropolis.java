@@ -1,15 +1,12 @@
 package mmm.coffee.fakes.domain;
 
-
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import mmm.coffee.fakes.annotations.ExcludeFromJacocoCodeCoverageReport;
 
-@Builder
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@ExcludeFromJacocoCodeCoverageReport
 public class Metropolis {
     private String city;
     private String stateId;
