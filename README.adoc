@@ -1,0 +1,87 @@
+:toc: auto
+
+= User's Guide
+
+== Motivation
+This library provides extensions to the DataFaker plugin. Most of these data fakers
+are similar the ones found in the ```net.datafaker:datafaker``` library,
+but with a substantially larger number of data values.  The fakers found here are designed
+to generate large data sets with substantially unique records, similar to an enterprise database.
+
+|===
+|Name|Description
+
+|DomainNameFaker|Provides about 500 domain names
+
+|EmailAddressFaker|Wraps the DomainNameFaker to provide email addresses that use the known domain names
+
+|FirstNameFaker|Provides about 4700 unique first names
+
+|LastNameFaker|Provides about 3800 unique surnames
+
+|MetropolisFaker|Provides about 4800 metroplex entries (actual US towns with their state, ZIP code, population, and county)
+
+|PersonalDataFaker|Wraps other data fakers to conjure an email address, first name and last name.
+|===
+
+=== Usage
+
+The APIs of these DataFakers follow the conventional style.
+
+.DomainNameFaker
+```[java]
+import mmm.coffee.fakes.DomainNameFaker;
+
+DomainNameFaker faker = new DomainNameFaker();
+String domainName = faker.domainNames().nextName();
+```
+
+.EmailAddressFaker
+```[java]
+import mmm.coffee.fakers.EmailAddressFaker;
+
+EmailAddressFaker faker = new EmailAddressFaker();
+String email = faker.emailAddresses().emailAddress("joe","cool");
+```
+
+.FirstNameFaker
+```[java]
+import mmm.coffee.fakers.FirstNameFaker;
+
+FirstNameFaker faker = new FirstNameFaker();
+String fName = faker.firstNames().nextName();
+```
+
+.LastNameFaker
+```[java]
+import mmm.coffee.fakers.LastNameFaker;
+
+LastNameFaker faker = new LastNameFaker();
+String lastName = faker.lastNames().nextName();
+```
+
+.MetropolisFaker
+```[java]
+import mmm.coffee.fakes.domain.Metropolis;
+import mmm.coffee.fakes.MetropolisFaker;
+
+MetropolisFaker faker = new MetropolisFaker();
+Metropolis metropolis = faker.metropolis().next();
+
+String city = metropolis.getCity();
+String state = metropolis.getStateId(); // the 2-letter state abbreviation
+String zipCode = metropolis.getPostalCode();
+String population = metropolis.getPopulation(); // intentionally a String
+String timeZone = metropolis.getTimeZone();
+String county = metropolis.getCounty();
+```
+
+.PersonalDataFaker
+```[java]
+import mmm.coffee.fakes.PersonalDataFaker;
+
+PersonalDataFaker faker = new PersonalDataFaker();
+String fname = faker.personNames().firstName();
+String surname = faker.personNames().lastName();
+String email = faker.personNames().emailAddress(fname, surname);
+```
